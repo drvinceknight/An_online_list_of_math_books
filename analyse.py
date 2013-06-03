@@ -205,12 +205,12 @@ if __name__ == "__main__":
     # For Overview
 
     Books.CreateFreqDistOfOverview(removecommon=True)  # Create distribution of words in overview, removing common words
-    PlotFreqDict(Books.overviewfrq, "Word count in overview", "word")  # Plot distribution
+    PlotFreqDict(Books.overviewfrq, "Words in overview", "word")  # Plot distribution
 
     # For Target
 
     Books.CreateFreqDistOfTarget(removecommon=True)  # Create distribution of words in tart, removing common words
-    PlotFreqDict(Books.targetfrq, "Word count in target", "word")  # Plot distribution
+    PlotFreqDict(Books.targetfrq, "Words in target", "word")  # Plot distribution
 
     # Write index.html with the list of books
 
@@ -269,7 +269,7 @@ Here is the actual list of books:
         if len(book.authors) > 1:
             for a in book.authors[1:]:
                 f.write(", %s" % a)
-        f.write("""\n**Overview:**\n
+        f.write("""\n\n**Overview:**\n
 > '%s'
                 """ % book.overview)
         f.write("""\n**Target:**\n
