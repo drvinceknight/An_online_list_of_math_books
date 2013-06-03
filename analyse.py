@@ -282,4 +282,18 @@ Here is the actual list of books:
 If you would like to add a book to the list go ahead to the google spreadsheet [here](https://docs.google.com/spreadsheet/ccc?key=0AvXhcaIlhi4udEFIN1ZSUTRpakotUEZ6QmlEOWNua3c&hl=en&forcehl=1#gid=0) and feel free to add to it. This website itself is not dynamic so if I don't update soon after you add to the list, feel free to give me a nudge on G+: my profile is [here](https://plus.google.com/110464871801965858778/posts).
 
             If you would like to take a look at the code used to analyse the data and write this site (and please do improve it) the github repo is [here](https://github.com/drvinceknight/An_online_list_of_math_books).
+
+## License Information
+
+This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0](http://creativecommons.org/licenses/by-sa/3.0/us/) license.  You are free to:
+
+* Share: copy, distribute, and transmit the work,
+* Remix: adapt the work
+
+Under the following conditions:
+
+* Attribution: You must attribute the work in the manner specified by the author or licensor (but not in any way that suggests that they endorse you or your use of the work).
+* Share Alike: If you alter, transform, or build upon this work, you may distribute the resulting work only under the same or similar license to this one.
+
+When attributing this work, please include me.
             """)
