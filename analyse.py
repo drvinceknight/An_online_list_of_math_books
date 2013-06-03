@@ -8,6 +8,7 @@ Script to analyse the downloaded data set of books.
 
 import pickle
 import sys
+import nltk
 
 
 class Book():
@@ -82,13 +83,13 @@ if __name__ == "__main__":
     Books = Table()
     Books.ReadFile(picklefile)
     print len(Books)
-    Books.CreateContributorsDict()
-    for contributor in Books.contributors:
-        print contributor + ":"
-        for e in Books.contributors[contributor]:
-            print "\t", e
-    Books.CreateAuthorsDict()
-    for author in Books.authors:
-        print author + ":"
-        for e in Books.authors[author]:
-            print "\t", e
+#    Books.CreateContributorsDict()
+#    for contributor in Books.contributors:
+#        print contributor + ":"
+#        for e in Books.contributors[contributor]:
+#            print "\t", e
+#    Books.CreateAuthorsDict()
+#    for author in Books.authors:
+#        print author + ":"
+#        for e in Books.authors[author]:
+#            print "\t", e
