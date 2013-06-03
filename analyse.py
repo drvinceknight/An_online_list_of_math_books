@@ -169,11 +169,45 @@ if __name__ == "__main__":
             picklefile = sys.argv[1]
     Books = Table()  # Create table instance
     Books.ReadFile(picklefile)  # Read in empty instance
+
+    # Analyse contributors
+
     Books.CreateContributorsDict()  # Create contributors dictionary
     PlotDict(Books.contributors, "Distribution of number of contributions", "Number of contributions")  # Plot distribution of contributors
+
+    # Find contributor with most books
+
+    mostprolificcontributor = Books.contributors.keys()[0]
+    for key in Books.contributors.keys()[1:]:
+        if len(Books.contributors[key]) > len(Books.contributors[mostprolificcontributor]):
+            mostprolificcontributor = key
+    print "Most prolific contributor is:", mostprolificcontributor
+    for e in Books.contributors[mostprolificcontributor]:
+        print "\t", e
+
+    # Analyse authors
+
     Books.CreateAuthorsDict()  # Create Authors dictionary
     PlotDict(Books.authors, "Distribution of number of books by author", "Number of books")  # Plot distribution of authors
+
+    # Find author with most books
+
+    mostprolificauthor = Books.authors.keys()[0]
+    for key in Books.authors.keys()[1:]:
+        if len(Books.authors[key]) > len(Books.authors[mostprolificauthor]):
+            mostprolificauthor = key
+    print "Most prolific author is:", mostprolificauthor
+    for e in Books.authors[mostprolificauthor]:
+        print "\t", e
+
+    # Some basic nl processing
+
+    # For Overview
+
     Books.CreateFreqDistOfOverview(removecommon=True)  # Create distribution of words in overview, removing common words
     PlotFreqDict(Books.overviewfrq, "Word count in overview", "word")  # Plot distribution
+
+    # For Target
+
     Books.CreateFreqDistOfTarget(removecommon=True)  # Create distribution of words in tart, removing common words
     PlotFreqDict(Books.targetfrq, "Word count in target", "word")  # Plot distribution
