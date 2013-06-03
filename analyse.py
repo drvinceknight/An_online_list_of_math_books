@@ -45,7 +45,7 @@ def PlotDict(dict, title, xlabel, width=1):
     plt.ylabel("Probability")
     plt.xlim(width / 2, max(x) + width / 2)
     plt.title(title)
-    plt.savefig(title.replace(" ", "_") + ".png")
+    plt.savefig("./images/" + title.replace(" ", "_") + ".png")
 
 
 def PlotFreqDict(dict, title, xlabel, numberofwords=50, width=.1):
@@ -66,7 +66,7 @@ def PlotFreqDict(dict, title, xlabel, numberofwords=50, width=.1):
     plt.xlabel("Word")
     plt.ylabel("Frequency")
     plt.title(title + "\n(%s most common words)" % numberofwords)
-    plt.savefig(title.replace(" ", "_") + ".png", bbox_inches='tight')
+    plt.savefig("./images/" + title.replace(" ", "_") + ".png", bbox_inches='tight')
 
 
 class Book():
@@ -211,3 +211,67 @@ if __name__ == "__main__":
 
     Books.CreateFreqDistOfTarget(removecommon=True)  # Create distribution of words in tart, removing common words
     PlotFreqDict(Books.targetfrq, "Word count in target", "word")  # Plot distribution
+
+    # Write index.html with the list of books
+
+    f = open("index.md", "wr")
+    f.write("""
+# A online (open) list of Mathematics Books
+## Introduction
+This site contains a list of books based on the [spreadsheet](https://docs.google.com/spreadsheet/ccc?key=0AvXhcaIlhi4udEFIN1ZSUTRpakotUEZ6QmlEOWNua3c&hl=en&forcehl=1#gid=0) put up by [+James Noble](https://plus.google.com/102137382870708304914/posts).
+
+[The spreadsheet is completely open and contains a list of books as well as well as a list of other lists](https://docs.google.com/spreadsheet/ccc?key=0AvXhcaIlhi4udEFIN1ZSUTRpakotUEZ6QmlEOWNua3c&hl=en&forcehl=1#gid=0)
+
+The list has been contributed to by %s different contributors. As this page was compiled automatically and some of the contributors have left their email address (others their G+ page and/or twitter handle) I won't list them here in case it causes more spam but do go take a look at the spreadsheet :).
+
+**Go ahead and add any book you have to the list!**
+
+## Some initial analysis
+
+I wrote some code to analyse (and in fact write the html behind this site) some aspects of the data set which (last time I checked) contains %s books.
+
+### Contributors
+
+The list is completely open but some people seem to contribute more than others. Here's the distribution of the number of guesses:
+
+![Distribution of the number of guesses](./images/Distribution_of_number_of_contributions.png)
+
+### Authors
+
+Similarly for the authors, here's the distribution of the number of books by author:
+
+![Number of books](./images/Distribution_of_number_of_books_by_author.png)
+
+The most prolific author is %s with %s books in the list.
+
+### Overview
+
+The list contains a data field allowing people to describe the book. Here is a plot of the frequency of the 50 most used "uncommon" words (using the [nltk](http://nltk.org/) python library).
+
+![Words used in the overview](./images/Word_count_in_overview.png)
+
+### Target
+
+There is also a field briefly describing the target audience for the book. Here is a similar frequency count to above:
+
+![Words used in the target](./images/Word_count_in_target.png)
+
+## The Books
+
+Here is the actual list of books:
+            """ % (len(Books.contributors), len(Books), mostprolificauthor, len(Books.authors[mostprolificauthor])))
+
+    k = 0
+    for book in Books.records:
+        k += 1
+        f.write("\n%s . [%s](%s)\n" % (k, book.title, book.link))
+        f.write("\n **Authored** by %s" % book.authors[0])
+        if len(book.authors) > 1:
+            for a in book.authors[1:]:
+                f.write(", %s" % a)
+        f.write("""\n**Overview:**\n
+> '%s'
+                """ % book.overview)
+        f.write("""\n**Target:**\n
+> '%s'
+                """ % book.target)
