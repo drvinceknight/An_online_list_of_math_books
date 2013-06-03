@@ -102,7 +102,7 @@ class Table():
         Args:
             picklefile: name (including path) of a pickled data file.
         """
-        f = open(picklefile, "rb")
+        f = open(picklefile, "rb")  # The data is a pickled list created with another script that automatically downloads the spreadsheet from google drive.
         self.rawdata = pickle.load(f)
         f.close()
         for row in self.rawdata:
@@ -275,3 +275,11 @@ Here is the actual list of books:
         f.write("""\n**Target:**\n
 > '%s'
                 """ % book.target)
+
+    f.write("""
+## Contributing
+
+If you would like to add a book to the list go ahead to the google spreadsheet [here](https://docs.google.com/spreadsheet/ccc?key=0AvXhcaIlhi4udEFIN1ZSUTRpakotUEZ6QmlEOWNua3c&hl=en&forcehl=1#gid=0) and feel free to add to it. This website itself is not dynamic so if I don't update soon after you add to the list, feel free to give me a nudge on G+: my profile is [here](https://plus.google.com/110464871801965858778/posts).
+
+            If you would like to take a look at the code used to analyse the data and write this site (and please do improve it) the github repo is [here](https://github.com/drvinceknight/An_online_list_of_math_books).
+            """)

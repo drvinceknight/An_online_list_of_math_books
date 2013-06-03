@@ -759,3 +759,9 @@ The author's personal reflections on mathematics teaching are very interesting a
 
 > 'Late high school and well into university studies.'
                 
+## Contributing
+
+If you would like to add a book to the list go ahead to the google spreadsheet [here](https://docs.google.com/spreadsheet/ccc?key=0AvXhcaIlhi4udEFIN1ZSUTRpakotUEZ6QmlEOWNua3c&hl=en&forcehl=1#gid=0) and feel free to add to it. This website itself is not dynamic so if I don't update soon after you add to the list, feel free to give me a nudge on G+: my profile is [here](https://plus.google.com/110464871801965858778/posts).
+
+If you would like to take a look at the code used to analyse the data and write this site (and please do improve it) the github repo is [here]().
+            
