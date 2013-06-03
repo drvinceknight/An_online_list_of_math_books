@@ -77,6 +77,13 @@ class Table():
                 else:
                     self.authors[author] = [row.title]
 
+    def CreateFreqDistOfOverview(self):
+        """Returns a dictionary of the word frequency in the overiews"""
+        overviews = ""
+        for row in self.records:
+            overviews += row.overview
+        self.overviewfrq = nltk.FreqDist(overviews)
+
 
 if __name__ == "__main__":
     picklefile = "book_list.pickle"
@@ -87,6 +94,7 @@ if __name__ == "__main__":
     Books.ReadFile(picklefile)
     Books.CreateContributorsDict()
     Books.CreateAuthorsDict()
+    Books.CreateContributorsDict()
 
     print "%s books have been contributed." % len(Books)
     print "---"
@@ -108,3 +116,4 @@ if __name__ == "__main__":
     # Include an analysis of number of authors
     # Include an analysis of authors
 
+    print Books.overviewfrq
