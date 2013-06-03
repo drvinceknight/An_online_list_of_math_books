@@ -17,7 +17,9 @@ class Book():
     """
     def __init__(self, row):
         self.title = row[0]
-        self.authors = [e.lstrip() for e in row[1].replace(",", " and").replace("And", "and").split("and")]
+        self.authors = [e.lstrip().rstrip() for e in row[1].replace(",", " and").replace("And", "and").split(" and ")]
+        if self.authors == ['']:
+            self.authors = ['Unkown']
         self.link = row[2]
         self.overview = row[3]
         self.target = row[4]
@@ -83,14 +85,26 @@ if __name__ == "__main__":
             picklefile = sys.argv[1]
     Books = Table()
     Books.ReadFile(picklefile)
-    print len(Books)
-#    Books.CreateContributorsDict()
-#    for contributor in Books.contributors:
-#        print contributor + ":"
-#        for e in Books.contributors[contributor]:
-#            print "\t", e
+    Books.CreateContributorsDict()
     Books.CreateAuthorsDict()
+
+    print "%s books have been contributed." % len(Books)
+    print "---"
+    print ""
+    print "Here are the books by contributors:"
+    for contributor in Books.contributors:
+        print contributor + ":"
+        for e in Books.contributors[contributor]:
+            print "\t", e
+    # Include an analysis of number of contributors
+    # Include an analysis of contributes
+    print "---"
+    print ""
+    print "Here are the books by authors:"
     for author in Books.authors:
         print author + ":"
         for e in Books.authors[author]:
             print "\t", e
+    # Include an analysis of number of authors
+    # Include an analysis of authors
+
