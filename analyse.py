@@ -248,13 +248,13 @@ The most prolific author is %s with %s books in the list.
 
 The list contains a data field allowing people to describe the book. Here is a plot of the frequency of the 50 most used "uncommon" words (using the [nltk](http://nltk.org/) python library).
 
-![Words used in the overview](./images/Word_count_in_overview.png)
+![Words used in the overview](./images/Word_in_overview.png)
 
 ### Target
 
 There is also a field briefly describing the target audience for the book. Here is a similar frequency count to above:
 
-![Words used in the target](./images/Word_count_in_target.png)
+![Words used in the target](./images/Word_in_target.png)
 
 ## The Books
 
