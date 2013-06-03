@@ -17,7 +17,7 @@ class Book():
     """
     def __init__(self, row):
         self.title = row[0]
-        self.authors = row[1]
+        self.authors = [e.lstrip() for e in row[1].replace(",", " and").replace("And", "and").split("and")]
         self.link = row[2]
         self.overview = row[3]
         self.target = row[4]
@@ -69,10 +69,11 @@ class Table():
         """Returns the authors of the list as keys to a dictionary"""
         self.authors = {}
         for row in self.records:
-            if row.authors in self.authors:
-                self.authors[row.authors].append(row.title)
-            else:
-                self.authors[row.authors] = [row.title]
+            for author in row.authors:
+                if author in self.authors:
+                    self.authors[author].append(row.title)
+                else:
+                    self.authors[author] = [row.title]
 
 
 if __name__ == "__main__":
@@ -88,8 +89,8 @@ if __name__ == "__main__":
 #        print contributor + ":"
 #        for e in Books.contributors[contributor]:
 #            print "\t", e
-#    Books.CreateAuthorsDict()
-#    for author in Books.authors:
-#        print author + ":"
-#        for e in Books.authors[author]:
-#            print "\t", e
+    Books.CreateAuthorsDict()
+    for author in Books.authors:
+        print author + ":"
+        for e in Books.authors[author]:
+            print "\t", e
