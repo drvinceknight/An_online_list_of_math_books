@@ -5,13 +5,13 @@ This site contains a list of books based on the [spreadsheet](https://docs.googl
 
 [The spreadsheet is completely open and contains a list of books as well as well as a list of other lists](https://docs.google.com/spreadsheet/ccc?key=0AvXhcaIlhi4udEFIN1ZSUTRpakotUEZ6QmlEOWNua3c&hl=en&forcehl=1#gid=0)
 
-The list has been contributed to by 30 different contributors. As this page was compiled automatically and some of the contributors have left their email address (others their G+ page and/or twitter handle) I won't list them here in case it causes more spam but do go take a look at the spreadsheet :).
+The list has been contributed to by 31 different contributors. As this page was compiled automatically and some of the contributors have left their email address (others their G+ page and/or twitter handle) I won't list them here in case it causes more spam but do go take a look at the spreadsheet :).
 
 **Go ahead and add any book you have to the list!**
 
 ## Some initial analysis
 
-I wrote some code to analyse (and in fact write the html behind this site) some aspects of the data set which (last time I checked) contains 65 books.
+I wrote some code to analyse (and in fact write the html behind this site) some aspects of the data set which (last time I checked) contains 66 books.
 
 ### Contributors
 
@@ -79,7 +79,7 @@ Here is the actual list of books:
 
 > 'Perfect for all ages.  I share it with my students at the end of the year.  I then have them create their own as a review of the year.'
                 
-4 . [Even Better Mathematics](http://www.amazon.co.uk/Even-Better-Mathematics-Continuum-Education/dp/1855391473/ref=sr_1_1?s=books&ie=UTF8&qid=1369902606)
+4 . [Even Better Mathematics]()
 
  **Authored** by AFZHAL  AHMED, HONOR WILLIAMS
 
@@ -596,7 +596,7 @@ The author's personal reflections on mathematics teaching are very interesting a
 
 > 'Anyone wishing to teach mathematics at any level.'
                 
-47 . [The Feltron Report](http://www.feltron.com/)
+47 . [The Feltron Report](http://www.amazon.co.uk/Even-Better-Mathematics-Continuum-Education/dp/1855391473/ref=sr_1_1?s=books&ie=UTF8&qid=1369902606)
 
  **Authored** by NICHOLAS FELTON
 
@@ -823,6 +823,18 @@ The author's personal reflections on mathematics teaching are very interesting a
 **Target:**
 
 > 'Late high school and well into university studies.'
+                
+66 . [Godel, Escher, Bach](http://www.amazon.com/G%C3%B6del-Escher-Bach-Eternal-Golden/dp/0465026567)
+
+ **Authored** by DOUGLAS HOFSTADTER
+
+**Overview:**
+
+> 'Douglas Hofstadter’s book is concerned directly with the nature of “maps” or links between formal systems. However, according to Hofstadter, the formal system that underlies all mental activity transcends the system that supports it. If life can grow out of the formal chemical substrate of the cell, if consciousness can emerge out of a formal system of firing neurons, then so too will computers attain human intelligence. Gödel Escher and Bach is a wonderful exploration of fascinating ideas at the heart of cognitive science: meaning, reduction, recursion, and much more'
+                
+**Target:**
+
+> 'High school and university.'
                 
 ## Contributing
 
